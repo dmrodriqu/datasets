@@ -1,0 +1,41 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    .vega-actions a {
+        margin-right: 12px;
+        color: #757575;
+        font-weight: normal;
+        font-size: 13px;
+    }
+    .error {
+        color: red;
+    }
+  </style>
+
+<script src="https://cdn.jsdelivr.net/npm//vega@3.3.1"></script>
+<script src="https://cdn.jsdelivr.net/npm//vega-lite@2.6.0"></script>
+<script src="https://cdn.jsdelivr.net/npm//vega-embed@3.14"></script>
+
+</head>
+<body>
+  <div id="vis"></div>
+  <script type="text/javascript">
+    var spec = {"config": {"view": {"width": 400, "height": 300}}, "data": {"name": "data-858b6b84554bdff85d0b8b3ce0b05537"}, "mark": "line", "encoding": {"color": {"type": "nominal", "field": "Origin"}, "x": {"type": "quantitative", "field": "Model"}, "y": {"type": "quantitative", "field": "MPG"}}, "height": 768, "title": "MPG Has Increased Over Time", "width": 1024, "$schema": "https://vega.github.io/schema/vega-lite/v2.6.0.json", "datasets": {"data-858b6b84554bdff85d0b8b3ce0b05537": [{"Model": 70, "Origin": "Europe", "MPG": 25.2}, {"Model": 71, "Origin": "Europe", "MPG": 28.75}, {"Model": 72, "Origin": "Europe", "MPG": 22.0}, {"Model": 73, "Origin": "Europe", "MPG": 24.0}, {"Model": 74, "Origin": "Europe", "MPG": 27.0}, {"Model": 75, "Origin": "Europe", "MPG": 24.5}, {"Model": 76, "Origin": "Europe", "MPG": 24.25}, {"Model": 77, "Origin": "Europe", "MPG": 29.25}, {"Model": 78, "Origin": "Europe", "MPG": 24.95}, {"Model": 79, "Origin": "Europe", "MPG": 30.449999999999996}, {"Model": 80, "Origin": "Europe", "MPG": 37.28888888888889}, {"Model": 81, "Origin": "Europe", "MPG": 31.575}, {"Model": 82, "Origin": "Europe", "MPG": 40.0}, {"Model": 70, "Origin": "Japan", "MPG": 25.5}, {"Model": 71, "Origin": "Japan", "MPG": 29.5}, {"Model": 72, "Origin": "Japan", "MPG": 24.2}, {"Model": 73, "Origin": "Japan", "MPG": 20.0}, {"Model": 74, "Origin": "Japan", "MPG": 29.333333333333332}, {"Model": 75, "Origin": "Japan", "MPG": 27.5}, {"Model": 76, "Origin": "Japan", "MPG": 28.0}, {"Model": 77, "Origin": "Japan", "MPG": 27.416666666666668}, {"Model": 78, "Origin": "Japan", "MPG": 29.687499999999996}, {"Model": 79, "Origin": "Japan", "MPG": 32.95}, {"Model": 80, "Origin": "Japan", "MPG": 35.400000000000006}, {"Model": 81, "Origin": "Japan", "MPG": 32.958333333333336}, {"Model": 82, "Origin": "Japan", "MPG": 34.888888888888886}, {"Model": 70, "Origin": "US", "MPG": 15.272727272727273}, {"Model": 71, "Origin": "US", "MPG": 18.1}, {"Model": 72, "Origin": "US", "MPG": 16.27777777777778}, {"Model": 73, "Origin": "US", "MPG": 15.03448275862069}, {"Model": 74, "Origin": "US", "MPG": 18.333333333333332}, {"Model": 75, "Origin": "US", "MPG": 17.55}, {"Model": 76, "Origin": "US", "MPG": 19.431818181818183}, {"Model": 77, "Origin": "US", "MPG": 20.72222222222222}, {"Model": 78, "Origin": "US", "MPG": 21.772727272727273}, {"Model": 79, "Origin": "US", "MPG": 23.47826086956522}, {"Model": 80, "Origin": "US", "MPG": 25.914285714285715}, {"Model": 81, "Origin": "US", "MPG": 27.53076923076923}, {"Model": 82, "Origin": "US", "MPG": 29.45}]}};
+    var embed_opt = {"mode": "vega-lite"};
+
+    function showError(el, error){
+        el.innerHTML = ('<div class="error">'
+                        + '<p>JavaScript Error: ' + error.message + '</p>'
+                        + "<p>This usually means there's a typo in your chart specification. "
+                        + "See the javascript console for the full traceback.</p>"
+                        + '</div>');
+        throw error;
+    }
+    const el = document.getElementById('vis');
+    vegaEmbed("#vis", spec, embed_opt)
+      .catch(error => showError(el, error));
+  </script>
+</body>
+</html>
