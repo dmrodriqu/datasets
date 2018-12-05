@@ -1,0 +1,9 @@
+{
+  "name": "opioid-epidemic-in-perspective",
+  "main": "opioid-epidemic-in-perspective.js",
+  "version": "1438.0.0",
+  "author": {
+    "name": "Dylan Rodriquez",
+    "url": "https://beta.observablehq.com/@dmrodriqu"
+  }
+}
